@@ -34,6 +34,25 @@ In this project, I built a containerized API management system for querying spor
 
 ***1. Set up IAM Roles***
 
+We will begin by creating the IAM role that will be executing all the actions with permissions AmazonS3FullAccess, MediaConvertFullAccess and AmazonEC2ContainerRegistryFullAccess. We will set a trust policy with the JSON file provided, make sure it's updated to the current AWS account.
+
+```
+aws iam create-role \
+  --role-name ChampionsLeague \
+  --assume-role-policy-document file://trust-policy.json
+
+aws iam attach-role-policy \
+  --role-name ChampionsLeague \
+  --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+
+aws iam attach-role-policy \
+  --role-name ChampionsLeague \
+  --policy-arn arn:aws:iam::aws:policy/MediaConvertFullAccess
+
+aws iam attach-role-policy \
+  --role-name ChampionsLeague \
+  --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+```
 
 
 ***2. Repo and API configuration***
