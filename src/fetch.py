@@ -36,7 +36,7 @@ def fetch_highlights():
         # Define the query parameters for the API request
         query_params = {
             "date": DATE,            # The specific date for which to fetch highlights
-            "leagueName": LEAGUE_NAME,  # The name of the league (e.g., NCAA)
+            "leagueName": LEAGUE_NAME,  # The name of the league (e.g., Champions League)
             "limit": LIMIT            # The maximum number of highlights to retrieve
         }
         

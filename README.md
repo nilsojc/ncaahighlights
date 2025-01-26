@@ -32,7 +32,7 @@ In this project, I built a containerized API management system for querying spor
 
 <h2>Step by Step Instructions</h2>
 
-***1. Set up IAM Roles***
+***1. Set up IAM Roles and Add RapidAPI keys to AWS Secrets Manager***
 
 We will begin by creating the IAM role that will be executing all the actions with permissions AmazonS3FullAccess, MediaConvertFullAccess and AmazonEC2ContainerRegistryFullAccess. We will set a trust policy with the JSON file provided, make sure it's updated to the current AWS account.
 
@@ -47,13 +47,22 @@ aws iam attach-role-policy \
 
 aws iam attach-role-policy \
   --role-name ChampionsLeague \
-  --policy-arn arn:aws:iam::aws:policy/MediaConvertFullAccess
+  --policy-arn arn:aws:iam::aws:policy/AWSElementalMediaConvertFullAccess
 
 aws iam attach-role-policy \
   --role-name ChampionsLeague \
   --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
 ```
 
+Then, we will add our rapidAPI key to AWS Secrets Manager to use our api key as a secret file.
+
+```
+aws secretsmanager create-secret \
+    --name RapidAPI \
+    --description "API key for accessing the Sport Highlights API" \
+    --secret-string '{"api_key":"YOUR_ACTUAL_API_KEY"}' \
+    --region us-east-1
+```
 
 ***2. Repo and API configuration***
 
@@ -63,15 +72,6 @@ You can set environemnt variables within the settings of Codespaces.
 
 The AWS credentials have the variables `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_DEFAULT_REGION` Respectively.
 
-
-Finally, we will make sure our dependencies are installed properly.
-
-```
-pip install flask
-pip install python-dotenv
-pip install requests
-
-```
 
 We will proceed with installing the Docker CLI and Docker in Docker
 
@@ -103,7 +103,7 @@ aws sts get-caller-identity
 ```
 
 
-***3. ***
+***3.  ***
 
 
 

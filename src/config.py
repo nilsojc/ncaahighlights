@@ -23,9 +23,9 @@ RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 # If the 'DATE' environment variable is not set, it defaults to '2023-12-01'.
 DATE = os.getenv("DATE", "2023-12-01")
 
-# The name of the basketball league. 
+# The name of the soccer league. 
 # If the 'LEAGUE_NAME' environment variable is not set, it defaults to 'NCAA'.
-LEAGUE_NAME = os.getenv("LEAGUE_NAME", "NCAA")
+LEAGUE_NAME = os.getenv("LEAGUE_NAME", "MLS")
 
 # The maximum number of highlights to fetch. 
 # It converts the 'LIMIT' environment variable to an integer, defaulting to 10 if not set.
@@ -61,8 +61,8 @@ MEDIACONVERT_ROLE_ARN = os.getenv("MEDIACONVERT_ROLE_ARN")
 ###################################
 
 # The key (path) in the S3 bucket where input highlights JSON file is stored.
-# If the 'INPUT_KEY' environment variable is not set, it defaults to 'highlights/basketball_highlights.json'.
-INPUT_KEY = os.getenv("INPUT_KEY", "highlights/basketball_highlights.json")
+# If the 'INPUT_KEY' environment variable is not set, it defaults to 'highlights/mls.json'.
+INPUT_KEY = os.getenv("INPUT_KEY", "highlights/mls_highlights.json")
 
 # The key (path) in the S3 bucket where the output processed video will be stored.
 # If the 'OUTPUT_KEY' environment variable is not set, it defaults to 'videos/first_video.mp4'.
