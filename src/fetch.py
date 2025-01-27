@@ -15,7 +15,7 @@ from config import (
     RAPIDAPI_HOST,       # The host for the RapidAPI service
     RAPIDAPI_KEY,        # The API key for authenticating with RapidAPI
     DATE,                # The date for which to fetch highlights
-    LEAGUE_NAME,         # The name of the basketball league (e.g., NCAA)
+    LEAGUE_NAME,         # The name of the soccer league (EG. Major League Soccer)
     LIMIT,               # The maximum number of highlights to fetch
     S3_BUCKET_NAME,      # The name of the S3 bucket where data will be stored
     AWS_REGION,          # The AWS region where the S3 bucket is located

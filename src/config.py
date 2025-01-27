@@ -9,7 +9,7 @@ import os
 
 # The base URL for the sports highlights API. 
 # If the 'API_URL' environment variable is not set, it defaults to the provided URL.
-API_URL = os.getenv("API_URL", "https://sport-highlights-api.p.rapidapi.com/basketball/highlights")
+API_URL = os.getenv("API_URL", "https://sport-highlights-api.p.rapidapi.com/football/highlights")
 
 # The host for the RapidAPI service. 
 # If the 'RAPIDAPI_HOST' environment variable is not set, it defaults to the provided host.
@@ -21,11 +21,11 @@ RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 
 # The date for which to fetch basketball highlights. 
 # If the 'DATE' environment variable is not set, it defaults to '2023-12-01'.
-DATE = os.getenv("DATE", "2023-12-01")
+DATE = os.getenv("DATE", "2024-12-07")
 
 # The name of the soccer league. 
-# If the 'LEAGUE_NAME' environment variable is not set, it defaults to 'NCAA'.
-LEAGUE_NAME = os.getenv("LEAGUE_NAME", "MLS")
+# If the 'LEAGUE_NAME' environment variable is not set, it defaults to ''.
+LEAGUE_NAME = os.getenv("LEAGUE_NAME", "Major League Soccer")
 
 # The maximum number of highlights to fetch. 
 # It converts the 'LIMIT' environment variable to an integer, defaulting to 10 if not set.
