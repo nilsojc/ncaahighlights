@@ -36,7 +36,7 @@ def fetch_highlights():
         # Define the query parameters for the API request
         query_params = {
             "date": DATE,            # The specific date for which to fetch highlights
-            "leagueName": LEAGUE_NAME,  # The name of the league (e.g., Champions League)
+            "leagueName": LEAGUE_NAME,  # The name of the league (e.g., Major League Soccer)
             "limit": LIMIT            # The maximum number of highlights to retrieve
         }
         
@@ -143,7 +143,7 @@ def process_highlights():
         print("Saving highlights to S3...")
         
         # Call the 'save_to_s3' function to upload the fetched highlights to S3
-        save_to_s3(highlights, "basketball_highlights")
+        save_to_s3(highlights, "mls_highlights")
 
 # Check if this script is being run as the main program
 # If so, execute the 'process_highlights' function
