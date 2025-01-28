@@ -159,7 +159,7 @@ This will run the files that are inside the container, and when successful, you 
 
 After running the script, the S3 bucket will be shown like this:
 
-![image](/assets/image1.png)
+![image](/assets/image3.png)
 
 The result of the video converted will appear on AWS Elemental MediaConvert as well:
 
