@@ -9,7 +9,7 @@ import os
 
 # The base URL for the sports highlights API. 
 # If the 'API_URL' environment variable is not set, it defaults to the provided URL.
-API_URL = os.getenv("API_URL", "https://sport-highlights-api.p.rapidapi.com/football/highlights")
+API_URL = os.getenv("API_URL", "https://sport-highlights-api.p.rapidapi.com/basketball/highlights")
 
 # The host for the RapidAPI service. 
 # If the 'RAPIDAPI_HOST' environment variable is not set, it defaults to the provided host.
@@ -21,11 +21,11 @@ RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 
 # The date for which to fetch basketball highlights. 
 # If the 'DATE' environment variable is not set, it defaults to '2023-12-01'.
-DATE = os.getenv("DATE", "2024-12-07")
+DATE = os.getenv("DATE", "2023-12-01")
 
-# The name of the soccer league. 
-# If the 'LEAGUE_NAME' environment variable is not set, it defaults to ''.
-LEAGUE_NAME = os.getenv("LEAGUE_NAME", "Major League Soccer")
+# The name of the basketball league. 
+# If the 'LEAGUE_NAME' environment variable is not set, it defaults to 'NCAA'.
+LEAGUE_NAME = os.getenv("LEAGUE_NAME", "NCAA")
 
 # The maximum number of highlights to fetch. 
 # It converts the 'LIMIT' environment variable to an integer, defaulting to 10 if not set.
@@ -61,8 +61,8 @@ MEDIACONVERT_ROLE_ARN = os.getenv("MEDIACONVERT_ROLE_ARN")
 ###################################
 
 # The key (path) in the S3 bucket where input highlights JSON file is stored.
-# If the 'INPUT_KEY' environment variable is not set, it defaults to 'highlights/mls.json'.
-INPUT_KEY = os.getenv("INPUT_KEY", "highlights/mls_highlights.json")
+# If the 'INPUT_KEY' environment variable is not set, it defaults to 'highlights/basketball_highlights.json'.
+INPUT_KEY = os.getenv("INPUT_KEY", "highlights/basketball_highlights.json")
 
 # The key (path) in the S3 bucket where the output processed video will be stored.
 # If the 'OUTPUT_KEY' environment variable is not set, it defaults to 'videos/first_video.mp4'.

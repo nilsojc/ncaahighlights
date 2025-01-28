@@ -1,0 +1,4 @@
+#!/bin/bash
+
+aws s3 rm s3://mlshighlightsnilsojc123 --recursive && aws s3api delete-bucket --bucket mlshighlightsnilsojc123
+

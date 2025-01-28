@@ -12,8 +12,6 @@ import requests
 # Import 'BytesIO' from the 'io' module to handle in-memory binary streams
 from io import BytesIO
 
-import pytube
-
 # Import specific configuration variables from the 'config.py' module
 from config import (
     S3_BUCKET_NAME,  # The name of the Amazon S3 bucket used for input/output data

@@ -1,3 +1,5 @@
+# fetch.py
+
 # Import the 'json' module for handling JSON data
 import json
 
@@ -7,16 +9,13 @@ import boto3
 # Import the 'requests' library for making HTTP requests to external APIs
 import requests
 
-# Import datetime to serialize json
-import datetime
-
 # Import specific configuration variables from the 'config.py' module
 from config import (
     API_URL,             # The endpoint URL for fetching sports highlights
     RAPIDAPI_HOST,       # The host for the RapidAPI service
     RAPIDAPI_KEY,        # The API key for authenticating with RapidAPI
     DATE,                # The date for which to fetch highlights
-    LEAGUE_NAME,         # The name of the soccer league (EG. Major League Soccer)
+    LEAGUE_NAME,         # The name of the basketball league (e.g., NCAA)
     LIMIT,               # The maximum number of highlights to fetch
     S3_BUCKET_NAME,      # The name of the S3 bucket where data will be stored
     AWS_REGION,          # The AWS region where the S3 bucket is located
@@ -24,10 +23,10 @@ from config import (
 
 def fetch_highlights():
     """
-    Fetch soccer highlights from the API.
+    Fetch basketball highlights from the API.
     
     This function makes a GET request to the specified API endpoint with the necessary
-    headers and query parameters to retrieve soccer highlights. It handles any
+    headers and query parameters to retrieve basketball highlights. It handles any
     request-related exceptions and returns the fetched highlights as a JSON object.
     
     Returns:
@@ -37,7 +36,7 @@ def fetch_highlights():
         # Define the query parameters for the API request
         query_params = {
             "date": DATE,            # The specific date for which to fetch highlights
-            "leagueName": LEAGUE_NAME,  # The name of the league (e.g., Major League Soccer)
+            "leagueName": LEAGUE_NAME,  # The name of the league (e.g., NCAA)
             "limit": LIMIT            # The maximum number of highlights to retrieve
         }
         
@@ -126,9 +125,9 @@ def save_to_s3(data, file_name):
 
 def process_highlights():
     """
-    Main function to fetch and process soccer highlights.
+    Main function to fetch and process basketball highlights.
     
-    This function orchestrates the workflow of fetching soccer highlights from the API
+    This function orchestrates the workflow of fetching basketball highlights from the API
     and saving them to an S3 bucket. It first calls 'fetch_highlights' to retrieve the data,
     and if successful, proceeds to call 'save_to_s3' to store the data in S3.
     """
@@ -144,12 +143,9 @@ def process_highlights():
         print("Saving highlights to S3...")
         
         # Call the 'save_to_s3' function to upload the fetched highlights to S3
-        save_to_s3(highlights, "mls_highlights")
+        save_to_s3(highlights, "basketball_highlights")
 
 # Check if this script is being run as the main program
 # If so, execute the 'process_highlights' function
 if __name__ == "__main__":
     process_highlights()
-
-
-
