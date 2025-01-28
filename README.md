@@ -2,11 +2,11 @@
   <img src="assets/diagram.png" 
 </p>
   
-## ☁️ 30 Days DevOps Challenge - Converting Major League Soccer Football Highlights with Docker, Terraform and Amazon Media Converter.   ☁️
+## ☁️ 30 Days DevOps Challenge - Converting NCAA Basketball Highlights with Docker, Terraform and Amazon Media Converter.   ☁️
 
 This is part of the fifth project in the 30-day DevOps challenge comprising of two parts. 
 
-In this project, I learned how to convert Major League Soccer Football highlights using Docker, S3, Amazon MediaConvert and deploying Infrastructure as code (Terraform) to push docker containers to an Elastic Container Registry with ECS (Elastic Container Service).
+In this project, I learned how to convert NCAA Basketball Highlights using Docker, S3, Amazon MediaConvert and deploying Infrastructure as code (Terraform) to push docker containers to an Elastic Container Registry with ECS (Elastic Container Service).
 
 
 
@@ -28,7 +28,7 @@ In this project, I learned how to convert Major League Soccer Football highlight
 <h2>Features</h2>  
 - Automated Video Processing Pipeline
 
-What it does: Converts raw MLS match highlights into viewer-ready formats (e.g., MP4, HLS) optimized for phones, tablets, or TVs.
+What it does: Converts raw NCAA match highlights into viewer-ready formats (e.g., MP4, HLS) optimized for phones, tablets, or TVs.
 
 Why it matters: Fans get smooth playback on any device without manual editing. Imagine instantly publishing highlights to apps like ESPN or YouTube after a game.
 
@@ -42,7 +42,6 @@ Real-world impact: Handle playoff final traffic spikes without crashing or overp
 
 
 
-
 <h2>Step by Step Instructions</h2>
 
 <h2>Part 1 - Deployment using Docker locally</h2>
@@ -53,19 +52,19 @@ We will begin by creating the IAM role that will be executing all the actions wi
 
 ```
 aws iam create-role \
-  --role-name MajorLeagueSoccer \
+  --role-name NCAARole \
   --assume-role-policy-document file://trust-policy.json
 
 aws iam attach-role-policy \
-  --role-name MajorLeagueSoccer \
+  --role-name NCAARole \
   --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 
 aws iam attach-role-policy \
-  --role-name MajorLeagueSoccer \
+  --role-name NCAARole \
   --policy-arn arn:aws:iam::aws:policy/AWSElementalMediaConvertFullAccess
 
 aws iam attach-role-policy \
-  --role-name MajorLeagueSoccer \
+  --role-name NCAARole \
   --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
 ```
 
@@ -235,7 +234,7 @@ Run the Bash script on the resources folder of the repository (soccerprojectclea
 
 ```
 cd resources 
-./soccerprojectcleanup.sh
+./ncaaprojectcleanup.sh
 ```
 
 <h2>Conclusion</h2>
