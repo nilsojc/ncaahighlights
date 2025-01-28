@@ -26,19 +26,20 @@ In this project, I learned how to convert NCAA Basketball Highlights using Docke
 
   
 <h2>Features</h2>  
-- Automated Video Processing Pipeline
 
-What it does: Converts raw NCAA match highlights into viewer-ready formats (e.g., MP4, HLS) optimized for phones, tablets, or TVs.
+- ***Automated Video Processing Pipeline***
 
-Why it matters: Fans get smooth playback on any device without manual editing. Imagine instantly publishing highlights to apps like ESPN or YouTube after a game.
+**What it does:** Converts raw NCAA match highlights into viewer-ready formats (e.g., MP4, HLS) optimized for phones, tablets, or TVs.
 
-- Scalable & Cost-Efficient Cloud Infrastructure
+**Why it matters:** Fans get smooth playback on any device without manual editing. Imagine instantly publishing highlights to apps like ESPN or YouTube after a game.
 
-AWS MediaConvert: Transcodes videos without managing servers (pay only for what you process).
+- ***Scalable & Cost-Efficient Cloud Infrastructure***
 
-S3 Storage: Stores raw videos and processed files securely, with automatic versioning and backups.
+**AWS MediaConvert**: Transcodes videos without managing servers (pay only for what you process).
 
-Real-world impact: Handle playoff final traffic spikes without crashing or overpaying for idle servers.
+**S3 Storage**: Stores raw videos and processed files securely, with automatic versioning and backups.
+
+**Real-world impact**: Handle playoff final traffic spikes without crashing or overpaying for idle servers.
 
 
 
