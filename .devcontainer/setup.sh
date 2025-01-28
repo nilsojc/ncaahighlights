@@ -37,3 +37,5 @@ sudo mv docker/docker /usr/local/bin/
 
 # Clean up
 rm -rf docker docker.tgz
+
+
