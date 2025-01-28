@@ -118,7 +118,7 @@ aws sts get-caller-identity
 ```
 
 
-***3. Update .env file and specify Amazon MediaConvert Endpoint ***
+***3. Update .env file and specify Amazon MediaConvert Endpoint***
 
 In this step, we will make sure our environment variables are set and done, as well as get the endpoint necessary to do the media conversion.
 
