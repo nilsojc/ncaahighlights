@@ -18,6 +18,14 @@ from config import (
     MEDIACONVERT_ROLE_ARN,  # The ARN of the IAM role for MediaConvert
 )
 
+# Patch pytube to fix 403 errors
+def patch_pytube():
+    import pytube
+    pytube.__version__ = "15.0.0"  # Fake version to bypass YouTube's checks
+    pytube.request.default_headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+
+patch_pytube()
+
 def fetch_highlights():
     try:
         query_params = {
